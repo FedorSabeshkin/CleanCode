@@ -46,3 +46,58 @@
 
 12. compareResult - resultOfCompare
 // результат сравнения двух элементов
+
+
+
+/****/
+
+6.1
+	1. dateStart - startMonthInterval
+	dateEnd - endMonthInterval
+
+	2. offset - utcOffsetInMinutes
+
+	3. int indexOfQuote = matcher.start();
+		int end = matcher.end();
+	int end = matcher.end();
+
+	4. list - headerList 
+	// в методе getHeaderNames()
+
+	5. found - parentElement
+	// в методе addElement(element, parentElementId) 
+
+
+
+6.2	
+	1. FilterExpressionVisitor expressionVisitor = new FilterExpressionVisitor(currentEntity);
+
+	2. Iterator<Entity> entityIterator = entityList.iterator();
+
+	3. Set<String> expandsSet
+
+	4. UpdateQueryRequestWrapper updateQueryRequestWrapper
+
+6.3
+	1. convertedUrl 
+	// в методе форматирования запроса из одной системы в другую
+	
+	2. BatchEntityIterator batchEntityIterator
+	// в методе readEntityCollection()
+
+	3. updatedQuery
+	// в классе UpdateQueryRequestWrapper 
+
+
+6.4
+	1. query - requestQuery
+	
+	2. SelectItem item - SelectItem selectItem
+	
+	3. List<String> path - List<String> selectPaths 
+
+	4. result  - onlyNumberString
+	// в методе removeLastLetterFromNumber()
+	
+	5. list - headerList 
+	// в методе getHeaderNames()
