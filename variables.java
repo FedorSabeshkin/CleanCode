@@ -101,3 +101,66 @@
 	
 	5. list - headerList 
 	// в методе getHeaderNames()
+
+
+
+7.1
+
+	1. connection - isSetConnection 
+	// Метод получения имени коннектина из URL
+
+	2. ifThereType - hasType
+	// проверка на то, указан ли тип в запросе
+
+	3. endBracket - hasEndBracket
+	// парсинг выражения
+
+	4. firstApostrophe - hasFirstApostrophe
+	// парсинг выражения
+
+	5. subfilter - isSubFilter
+
+
+7.2
+
+	1. success
+	// флаг индентификатора успеха в методе обращения к удаленному хосту
+
+	2. foundEntity
+	// есть ли в сете entity с параметрами, как у переданной в метод
+
+7.3
+	// Before
+	for (Element i : structure.elements()){
+		// <...> работа с элементом
+	}
+
+	// After
+	for (Element element : structure.elements()){}
+
+// Названия - пара антонимов
+7.4 
+
+	1. success/error
+	/* как аргументы в обработчиках результата асинхронного запроса.
+	В зависимости от того попали в положительную ветку 
+	или поймали ошибку - будем работать в разных обработчика с разными по названию переменными 
+	*/
+
+	2. startIndex/endIndex
+	/**
+	В методе парсинга значения из строки
+	*/
+
+// Временные переменные
+7.5
+	1.
+	// Before
+	Boolean b = false;
+	
+	// After
+	Boolean isError = false;
+	// переменная перед участком кода, который проставит ее true при если не найдет элемент, который должен 
+
+	2. newLanguage - targetLanguage
+	// в методе switchLanguage()
