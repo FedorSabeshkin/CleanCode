@@ -103,7 +103,7 @@
 	// в методе getHeaderNames()
 
 
-
+// examples of right bool variable names
 7.1
 
 	1. connection - isSetConnection 
@@ -118,9 +118,9 @@
 	4. firstApostrophe - hasFirstApostrophe
 	// парсинг выражения
 
-	5. subfilter - isSubFilter
+	5. subfilter - isSubfilter
 
-
+// standart bool variables
 7.2
 
 	1. success
@@ -129,6 +129,7 @@
 	2. foundEntity
 	// есть ли в сете entity с параметрами, как у переданной в метод
 
+// variables in cycle
 7.3
 	// Before
 	for (Element i : structure.elements()){
