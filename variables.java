@@ -165,3 +165,46 @@
 
 	2. newLanguage - targetLanguage
 	// в методе switchLanguage()
+
+
+/**
+Примеры имен, которых следует избегать и их исправления
+ */
+
+1. loggerWindow - loggerContentWindow
+// в методе вывода логов в окно в UI
+
+2. urlOld - copyOfUrl
+// метод преобразования url
+
+3. newRow - productRecord
+// в методе добавления новой строчки в таблицу продуктов
+
+4. obj - parser
+// объект парсера
+
+5. table - contentOfCheckupTable
+// метод получения контента из таблицы на странице
+
+6. URI - uri 
+	URL - url 
+// в методе парсинга uri
+
+7. value - headerValue
+// в методе получения значения header по его названию
+
+8. pair - queryOptionPairs
+// в методе парсинга переданных аргументов
+
+9. strs_2 - partQueryAfterOption
+// в методе переработки строки с аргументами переданными в uri
+
+10. values - optionArguments
+	value - optionArgument
+// получение аргументов из строки запроса
+
+11. result - withoutLastLetter
+// в методе removeLastLetterFromNumber()
+
+12. newEntitySet - copyOfEntitySet
+// в методе фильтрации сета
