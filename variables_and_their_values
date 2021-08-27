@@ -92,15 +92,19 @@ var sinceLastAppUpdate = Long.Parse(sinceLastUpdate);
 // after
 Long sinceLastAppUpdate = Long.Parse(sinceLastUpdate);
 // явное объявление переменной вместо неявного
+
 14.
 //before
 var url = App.DBSettingsModel.getConnectionUrl()
+
 // after
 URL url = App.DBSettingsModel.getConnectionUrl()
 // явное объявление переменной вместо неявного
+
 15.
 //before
 var updated="0";
+
 // after
 boolean isUpdated = false
 // явное объявление переменной вместо неявного
