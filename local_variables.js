@@ -1,3 +1,26 @@
+a) 
+// before
+if (...) {
+    document.getElementById(page + '__accept_barcode').value = '';
+    document.getElementById(page + '__accept_count').value = '';
+    isEnterLastKey = false;
+}
+
+// after
+const BARCODE_ID_SUFIX = '__accept_barcode';
+const COUNT_ID_SUFIX = '__accept_barcode';
+
+if (...) {
+    setIsEnterLastKey(false);
+    cleanScanInputs();
+}
+
+function cleanScanInputs() {
+    cleanInput(page + BARCODE_ID_SUFIX);
+    cleanInput(page + COUNT_ID_SUFIX);
+}
+// объеденил группу комманд в метод
+
 1.
 // before
 if (...) {
@@ -89,6 +112,30 @@ function cleanScanInputs() {
 // объеденил группу комманд в метод
 
 
+b)
+
+// before
+{
+    togglePage(appName + '_page_2', appName + '_page_3')
+    itemToChange = searchScanOperation(currentTarget, products)
+    document.getElementById(appName + '_page_2__accept_barcode').value = itemToChange.ean;
+    document.getElementById(appName + '_page_2__accept_count').value = itemToChange.count;
+    isEdit = true;
+}
+
+//after
+{
+    setIsEdit(true);
+    openEditPage();
+}
+function setIsEdit(isEdit) {
+    _isEdit = isEdit;
+}
+// поднял изменение значения переменной над вызовами методов
+// объеденил группу комманд в метод
+// сделал переменную (псевдо) приватной и добавил для нее сеттер
+
+
 6.
 // before
 {
@@ -153,7 +200,7 @@ function setIsEdit(isEdit) {
 // сделал переменную (псевдо) приватной и добавил для нее сеттер
 
 
-9.
+c)
 // before
 function setCookie(name, value, options) {
     if (!options) {
@@ -162,6 +209,75 @@ function setCookie(name, value, options) {
         };
     }
 
+    if (options.expires instanceof Date) {
+        options.expires = options.expires.toUTCString();
+    }
+
+    let cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+
+    for (let optionKey in options) {
+        cookie += "; " + optionKey;
+        let optionValue = options[optionKey];
+        if (optionValue !== true) {
+            cookie += "=" + optionValue;
+        }
+    }
+
+    document.cookie = cookie;
+}
+
+// after
+function setCookie(name, value, options) {
+    let cookie = prepareCookieString(name, value, options);
+    document.cookie = cookie;
+}
+/** */
+
+function prepareCookieString(name, value, options) {
+    let cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+    options = prepareOptions(options);
+    cookie = appendCookieOptions(cookie, options);
+    return cookie;
+}
+
+function initOptions() {
+    let options = {
+        path: '/'
+    };
+    return options;
+}
+
+
+function prepareOptions(options) {
+    if (!options) {
+        options = initOptions();
+    }
+    if (options.expires instanceof Date) {
+        options.expires = options.expires.toUTCString();
+    }
+    return options;
+}
+
+function appendCookieOptions(cookie, options) {
+    for (let optionKey in options) {
+        cookie += "; " + optionKey;
+        let optionValue = options[optionKey];
+        if (optionValue !== true) {
+            cookie += "=" + optionValue;
+        }
+    }
+}
+// объеденил группs комманд в методы
+
+9.
+// before
+function setCookie(name, value, options) {
+    if (!options) {
+        options = {
+            path: '/'
+        };
+    }
 
     if (options.expires instanceof Date) {
         options.expires = options.expires.toUTCString();
