@@ -49,9 +49,9 @@
                 String[] nameAndValue = stringOfParsedFilters.split("xxx");
                 List<String> nameAndValueList = Arrays.asList(nameAndValue);
                 ArrayDeque<Integer> nameAndValueArrayDeque = new ArrayDeque<>(nameAndValueList);
-                if(nameAndValueList.size() == LENGTH_PAIR_OF_NAME_VALUE){
-                    if(nameAndValueList.getFirst().contains("...")){
-                        nameAndValueList.addLast(nameAndValue.pollLast().replaceAll("...", "///"));
+                if(nameAndValueArrayDeque.size() == LENGTH_PAIR_OF_NAME_VALUE){
+                    if(nameAndValueArrayDeque.getFirst().contains("...")){
+                        nameAndValueArrayDeque.addLast(nameAndValueArrayDeque.pollLast().replaceAll("...", "///"));
                     }
                 }
 
