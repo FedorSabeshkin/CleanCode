@@ -125,7 +125,7 @@ function removeStreetDuplicate(hits){
 }
 
 5.
-// before
+                    // before
 
                     // transforms hobbies in a tab with 4 columns
                     // 1, 2, 3, 4, 5, 6, 7, 8, 9 becomes  [[1, 2, 3, 4], [5, 6, 7, 8], [9...]]
@@ -141,7 +141,7 @@ function removeStreetDuplicate(hits){
                         hobbies[col].push(hobby);
                     });
 
-// after
+                    // after
                     let hobbies = $scope.model.fields.naturalPersonHobbies.hobbies;
                     let amountOfColumns = 4;
                     hobbies = apartDataOnCollumns(amountOfColumns, hobbies)
